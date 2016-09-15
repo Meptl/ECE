@@ -1,0 +1,10 @@
+Intro
+Equipment
+Procedure
+    PB505 Design (attach image of breadboard)
+    Logic Probe
+    Wiring/Circuit Diagram
+    Logical Circuit
+    TTL IC 7486 Design
+    Binary Table
+References
