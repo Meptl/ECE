@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[
+    left=0.73in,
+    right=0.73in,
+    top=.8in,
+    bottom=.50in,
+    paperheight=11in,
+    paperwidth=8.5in
+]{geometry}
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{graphicx}
+\usepackage{float} % Used with H specifier for floats
+
+\begin{document}
+% Cover Page
+\pagenumbering{gobble}
+\begin{center}
+\textbf{
+    \Large{ECE 543: Introduction to Digital Systems}
+    \\~\\
+    \large{Instructor: Bessam Zuhair Al Jewad, Ph.D.}
+    \\[1.25in]
+    \LARGE{Prelab \#4: Fault Detection in Digital Logic}
+    \\[0.62in]
+    \large{Prepared for Himadri Basu (TA)\\~\\By Christopher Chin}
+    \\[1.25in]
+    \LARGE{Section 6}
+    \\[1.25in]
+    \Large{Department of Electrical and Computer Engineering\\
+           University of New Hampshire}
+    \\[1.25in]
+    \Large{\today}
+}
+\end{center}
+\clearpage
+\pagenumbering{arabic}
+
+% TOC
+\tableofcontents
+\pagebreak
+
+% Pages
+\section{Introduction}
+The objective of this experiment is to detect common errors and faults in actual logic systems.
+We will implement an XS-3 to BCD converter.
+BCD is binary encoded decimal, a number system in base 2.
+0010 is $2_10$. 0011 is $3_10$. 0100 is $4_10$
+XS-3 is a number system where the lowest value (0) represents negative three.
+Subsequent digits follow a binary system: $-2_10$ is 0001 and $0_10$ is 0011.
+
+\section{Equipment Required}
+\begin{itemize}
+    \item Global Specialties Design and Prototyping PB-505
+    \item Wire leads
+    \item 7400 TTL Integrated Circuit (4)
+    \item Logic Probe (1)
+\end{itemize}
+\section{Procedure}
+\subsection{BCD to XS-3 conversion}
+This circuit will convert from the BCD system to XS-3 system.
+\subsection{XS-3 to BCD conversion}
+This circuit will convert from the XS-3 system to BCD system.
+\subsection{K-map}
+\subsection{Boolean expression of the proposed K map}
+\subsection{Gate Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7in]{XS3-BCD.png}
+    \caption{XS-3 to BCD Wiring Diagram}
+\end{figure}
+\subsection{Circuit Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5in]{IC1.png}
+    \caption{IC1 Wiring Diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5in]{IC2.png}
+    \caption{IC2 Wiring Diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5in]{IC3.png}
+    \caption{IC3 Wiring Diagram}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5in]{IC4.png}
+    \caption{IC4 Wiring Diagram}
+\end{figure}
+\subsection{Seven Segment Display}
+The seven segment display contains two digits. Each digit has a set of pins 5 holes horizontally
+and 4 holes vertically. The rows of these pins are connected. The four rows represent a digit
+in a BCD value with the first row being the most significant bit.
+\section{Truth Table}
+\begin{enumerate}
+    \item IC 1 \\
+        \begin{tabular}{| C{1.55cm} | C{1.55cm} | C{1.55cm} | C{1.55cm} | C{1.55cm} | C{1.55cm} | C{1.55cm} | C{1.55cm} |}
+            \hline
+                \multicolumn{4}{|c|}{Inputs} &
+                \multicolumn{3}{|c|}{Intermediates} &
+                Output \\
+            \hline S0 & S1 & S2 & S3 & Pin 3 & Pin 6 & Pin 8 & IC4 Pin13 \\
+            \hline 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1\\
+            \hline 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1\\
+            \hline 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1\\
+            \hline 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1\\
+            \hline 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1\\
+            \hline 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1\\
+            \hline 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1\\
+            \hline 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1\\
+            \hline 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1\\
+            \hline 1 & 0 & 0 & 1 & 1 & 1 & 0 & 1\\
+            \hline 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1\\
+            \hline 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0\\
+            \hline 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1\\
+            \hline 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1\\
+            \hline 0 & 1 & 1 & 1 & 1 & 0 & 0 & 1\\
+            \hline 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0\\
+            \hline
+        \end{tabular}
+    \item IC 2 \\
+        \begin{tabular}{| C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} |}
+            \hline
+                \multicolumn{3}{|c|}{Inputs} &
+                \multicolumn{2}{|c|}{Intermediates} &
+                Output \\
+            \hline IC1 Pin3 & S2 & IC3 Pin3 & Pin 3 & Pin 6 & C \\
+            \hline 0 & 0 & 0 & 0 & 1 & 1 \\
+            \hline 1 & 0 & 0 & 1 & 1 & 1 \\
+            \hline 0 & 1 & 0 & 0 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 1 & 0 & 1 \\
+            \hline 0 & 0 & 1 & 0 & 1 & 0 \\
+            \hline 1 & 0 & 1 & 1 & 1 & 0 \\
+            \hline 0 & 1 & 1 & 0 & 1 & 0 \\
+            \hline 1 & 1 & 1 & 1 & 0 & 1 \\
+            \hline
+        \end{tabular}
+    \item IC 3 \\
+        \begin{tabular}{| C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} | C{1.2cm} |}
+            \hline
+                \multicolumn{5}{|c|}{Inputs} &
+                \multicolumn{2}{|c|}{Intermediates} &
+                \multicolumn{3}{|c|}{Outputs} \\
+            \hline IC1 Pin6 & IC1 Pin3 & S0 & S1 & IC4 Pin6 & Pin 6 & Pin 8 & IC2 Pin9 & A & B \\
+            \hline 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+            \hline 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+            \hline 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+            \hline 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 \\
+            \hline 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+            \hline 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+            \hline 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+            \hline 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+            \hline 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+            \hline 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+            \hline 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+            \hline 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 \\
+            \hline 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+            \hline 1 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 \\
+            \hline 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            \hline 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \item IC 4 \\
+        \begin{tabular}{| C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} |}
+            \hline
+                \multicolumn{3}{|c|}{Inputs} &
+                Intermediate &
+                \multicolumn{2}{|c|}{Outputs} \\
+            \hline S1 & S0 & IC1 Pin11 & Pin 3 & IC3 Pin13 & D \\
+            \hline 0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline 1 & 0 & 0 & 0 & 1 & 1 \\
+            \hline 0 & 1 & 0 & 1 & 0 & 1 \\
+            \hline 1 & 1 & 0 & 0 & 1 & 1 \\
+            \hline 0 & 0 & 1 & 1 & 1 & 0 \\
+            \hline 1 & 0 & 1 & 0 & 1 & 0 \\
+            \hline 0 & 1 & 1 & 1 & 0 & 0 \\
+            \hline 1 & 1 & 1 & 0 & 1 & 0 \\
+            \hline
+        \end{tabular}
+\end{enumerate}
+
+\pagebreak
+\section{References}
+Ronald J. Tocci et al. 2011. Digital Systems: Principles and Applications, 11\textsuperscript{th} Ed.
+
+\end{document}
