@@ -59,10 +59,28 @@ Subsequent digits follow a binary system: $-2_10$ is 0001 and $0_10$ is 0011.
 \end{itemize}
 \section{Procedure}
 \subsection{BCD to XS-3 conversion}
-This circuit will convert from the BCD system to XS-3 system.
-\subsection{XS-3 to BCD conversion}
-This circuit will convert from the XS-3 system to BCD system.
+\begin{tabular}{| C{1.7cm} | C{1.7cm} |}
+    \hline BCD  & XS-3 \\
+    \hline 0000 & 0011 \\
+    \hline 0001 & 0100 \\
+    \hline 0010 & 0101 \\
+    \hline 0011 & 0110 \\
+    \hline 0100 & 0111 \\
+    \hline 0101 & 1000 \\
+    \hline 0110 & 1001 \\
+    \hline 0111 & 1010 \\
+    \hline 1000 & 1011 \\
+    \hline 1001 & 1100 \\
+    \hline 1010 & 1101 \\
+    \hline 1011 & 1110 \\
+    \hline 1100 & 1111 \\
+    \hline
+\end{tabular}
 \subsection{K-map}
+\begin{tabular}{| C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} | C{1.7cm} |}
+    \hline ~  & 00 & 01 & 10 & 11 \\
+    \hline
+\end{tabular}
 \subsection{Boolean expression of the proposed K map}
 \subsection{Gate Diagram}
 \begin{figure}[H]
