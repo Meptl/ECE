@@ -175,99 +175,68 @@ g: $\overline{\overline{\overline{S_2}\overline{S_1}} * \overline{S_2S_1S_0}}$
 \end{figure}
 \subsection{Wiring List}
 \begin{tabular}{| C{1.2cm} | C{1.2cm} | C{.5cm} | C{1.2cm} | C{1.2cm} |}
-    \hline
     \hline Chip & Pin & to & Chip & Pin \\
     \hline \multicolumn{2}{|c|}{S0} &~& 1 & 1 \\
     \hline \multicolumn{2}{|c|}{S1} &~& 1 & 3 \\
     \hline \multicolumn{2}{|c|}{S2} &~& 1 & 5 \\
-
-    % a
-    \hline 1 & 1 &~& 3 & 1 \\
-    \hline 1 & 4 &~& 3 & 2 \\
-    \hline 1 & 6 &~& 3 & 13 \\
-
-    \hline 1 & 2 &~& 3 & 3 \\
-    \hline 3 & 2 &~& 3 & 4 \\
-    \hline 1 & 5 &~& 3 & 5 \\
-
-    \hline 3 & 12 &~& 6 & 1 \\
-    \hline 3 & 6 &~& 6 & 2 \\
-
-    \hline 6 & 3 &~& \multicolumn{2}{|c|}{a} \\
-
-    % b
-    \hline 3 & 1 &~& 3 & 11 \\
-    \hline 3 & 4 &~& 3 & 10 \\
-    \hline 3 & 5 &~& 3 & 9 \\
-
-    \hline 3 & 3 &~& 4 & 1 \\
-    \hline 1 & 3 &~& 4 & 2 \\
-    \hline 3 & 9 &~& 4 & 13 \\
-
-    \hline 3 & 8 &~& 6 & 4 \\
-    \hline 4 & 12 &~& 6 & 5 \\
-
-    \hline 6 & 6 &~& \multicolumn{2}{|c|}{b} \\
-
-    % c
-    \hline 4 & 1 &~& 4 & 3 \\
-    \hline 4 & 2 &~& 4 & 4 \\
-    \hline 3 & 13 &~& 4 & 5 \\
-
-    \hline 4 & 6 &~& 1 & 9 \\
-
-    \hline 1 & 8 &~& \multicolumn{2}{|c|}{c} \\
-
-    % d
-    \hline 1 & 4 &~& 2 & 1 \\
-    \hline 1 & 5 &~& 2 & 2 \\
-
-    \hline 3 & 11 &~& 4 & 11 \\
-    \hline 4 & 4 &~& 4 & 10 \\
-    \hline 4 & 13 &~& 4 & 9 \\
-
-    \hline 2 & 3 &~& 6 & 13 \\
-    \hline 4 & 8 &~& 6 & 12 \\
-
-    \hline 6 & 11 &~& \multicolumn{2}{|c|}{d} \\
-
-    % e
-    \hline 4 & 3 &~& 6 & 10 \\
-    \hline 2 & 3 &~& 6 & 9 \\
-
-    \hline 6 & 8 &~& \multicolumn{2}{|c|}{e} \\
-
-    % f
-    \hline 1 & 1 &~& 2 & 13 \\
-    \hline 1 & 6 &~& 2 & 12 \\
-
-    \hline 1 & 3 &~& 2 & 10 \\
-    \hline 1 & 5 &~& 2 & 9 \\
-
-    % Out of 2-NAND use 3-NAND
-    \hline 4 & 10 &~& 5 & 1 \\
-    \hline 4 & 5 &~& 5 & 2 \\
     \hline \multicolumn{2}{|c|}{VCC} &~& 5 & 13 \\
-
-    \hline 2 & 11 &~& 5 & 9 \\
-    \hline 2 & 8 &~& 5 & 10 \\
-    \hline 5 & 12 &~& 5 & 11 \\
-
-    \hline 5 & 8 &~& \multicolumn{2}{|c|}{f} \\
-
-    % g
-    \hline 1 & 4 &~& 2 & 4 \\
-    \hline 1 & 6 &~& 2 & 5 \\
-
-    % Out of 2-NAND use 3-NAND
-    \hline 4 & 8 &~& 5 & 3 \\
-    \hline 2 & 6 &~& 5 & 4 \\
     \hline \multicolumn{2}{|c|}{VCC} &~& 5 & 5 \\
-
-    \hline 5 & 6 &~& \multicolumn{2}{|c|}{g} \\
-
+    \hline 1 & 1 &~& 2 & 13 \\
+    \hline 1 & 1 &~& 3 & 1 \\
+    \hline 1 & 2 &~& 3 & 3 \\
+    \hline 1 & 3 &~& 2 & 10 \\
+    \hline 1 & 3 &~& 4 & 2 \\
+    \hline 1 & 4 &~& 2 & 1 \\
+    \hline 1 & 4 &~& 2 & 4 \\
+    \hline 1 & 4 &~& 3 & 2 \\
+    \hline 1 & 5 &~& 2 & 2 \\
+    \hline 1 & 5 &~& 2 & 9 \\
+    \hline 1 & 5 &~& 3 & 5 \\
+    \hline 1 & 6 &~& 2 & 5 \\
+    \hline 1 & 6 &~& 2 & 12 \\
+    \hline 1 & 6 &~& 3 & 13 \\
+    \hline 1 & 8 &~& \multicolumn{2}{|c|}{c} \\
+    \hline 2 & 3 &~& 6 & 9 \\
+    \hline 2 & 3 &~& 6 & 13 \\
+    \hline 2 & 6 &~& 5 & 4 \\
+    \hline 2 & 8 &~& 5 & 10 \\
+    \hline 2 & 11 &~& 5 & 9 \\
+    \hline 3 & 1 &~& 3 & 11 \\
+    \hline 3 & 2 &~& 3 & 4 \\
     \hline
 \end{tabular}
+\begin{tabular}{| C{1.2cm} | C{1.2cm} | C{.5cm} | C{1.2cm} | C{1.2cm} |}
+    \hline Chip & Pin & to & Chip & Pin \\
+    \hline 3 & 3 &~& 4 & 1 \\
+    \hline 3 & 4 &~& 3 & 10 \\
+    \hline 3 & 5 &~& 3 & 9 \\
+    \hline 3 & 6 &~& 6 & 2 \\
+    \hline 3 & 8 &~& 6 & 4 \\
+    \hline 3 & 9 &~& 4 & 13 \\
+    \hline 3 & 11 &~& 4 & 11 \\
+    \hline 3 & 12 &~& 6 & 1 \\
+    \hline 3 & 13 &~& 4 & 5 \\
+    \hline 4 & 1 &~& 4 & 3 \\
+    \hline 4 & 2 &~& 4 & 4 \\
+    \hline 4 & 3 &~& 6 & 10 \\
+    \hline 4 & 4 &~& 4 & 10 \\
+    \hline 4 & 5 &~& 5 & 2 \\
+    \hline 4 & 6 &~& 1 & 9 \\
+    \hline 4 & 8 &~& 6 & 12 \\
+    \hline 4 & 8 &~& 5 & 3 \\
+    \hline 4 & 10 &~& 5 & 1 \\
+    \hline 4 & 12 &~& 6 & 5 \\
+    \hline 4 & 13 &~& 4 & 9 \\
+    \hline 5 & 6 &~& \multicolumn{2}{|c|}{g} \\
+    \hline 5 & 8 &~& \multicolumn{2}{|c|}{f} \\
+    \hline 5 & 12 &~& 5 & 11 \\
+    \hline 6 & 3 &~& \multicolumn{2}{|c|}{a} \\
+    \hline 6 & 6 &~& \multicolumn{2}{|c|}{b} \\
+    \hline 6 & 8 &~& \multicolumn{2}{|c|}{e} \\
+    \hline 6 & 11 &~& \multicolumn{2}{|c|}{d} \\
+    \hline
+\end{tabular}
+\pagebreak
 \section{References}
 Ronald J. Tocci et al. 2011. Digital Systems: Principles and Applications, 11\textsuperscript{th} Ed.
 
