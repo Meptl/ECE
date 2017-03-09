@@ -1,5 +1,5 @@
-TEX_FILE=prelab
-OUT_FILE=Christopher_Chin_Prelab_2_Section_6
+TEX_FILE=lab
+OUT_FILE=Christopher_Chin_Lab
 all:
 	pdflatex -jobname=$(OUT_FILE) $(TEX_FILE).tex
 clean:
