@@ -1,0 +1,52 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[
+    scale=0.8,
+    paperheight=11in,
+    paperwidth=8.5in
+]{geometry}
+
+\begin{document}
+% Header
+{\parindent0pt
+ECE562 Lab 4\\
+Memory Data Storage \& I/O Device Interfacing\\
+Part 1\\
+\today\\
+Christopher Chin, Computer Science\\
+
+\textbf{Objectives:}
+
+The goal of this lab is to learn about ASCII and I/O interfacing.\\
+
+\textbf{Results:}
+
+\begin{tabular}{| l | l | l | l |}
+    \hline Label & TITLE & LABNUM & COMBI \\
+    \hline Address & 3000 & 3620 & 3622 \\
+    \hline
+\end{tabular}
+\vspace{5mm}
+
+\begin{tabular}{| l | l | l | l |}
+    \hline 1 \$31 - \$88 & 2 \$32 - \$84 & 3 \$33 - \$82 & A \$41 - \$81 \\
+    \hline 4 \$34 - \$48 & 5 \$35 - \$44 & 6 \$36 - \$42 & B \$42 - \$41 \\
+    \hline 7 \$37 - \$28 & 8 \$38 - \$24 & 9 \$39 - \$22 & C \$43 - \$21 \\
+    \hline * \$2A - \$18 & 0 \$30 - \$14 & \# \$23 - \$12 & D \$44 - \$11 \\
+    \hline
+\end{tabular}\\
+\vspace{1cm}
+
+SCANCD:\\
+ FCB \$88, \$84, \$82, \$81\\
+ FCB \$48, \$44, \$42, \$41\\
+ FCB \$28, \$24, \$22, \$21\\
+ FCB \$18, \$14, \$12, \$11\\
+ FCB 0\\
+
+ASCIICD:\\
+ FCB \$31, \$32, \$33, \$41\\
+ FCB \$34, \$35, \$36, \$42\\
+ FCB \$37, \$38, \$39, \$43\\
+ FCB \$2A, \$30, \$23, \$44\\
+}
+\end{document}
