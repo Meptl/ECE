@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[
+    scale=0.8,
+    paperheight=11in,
+    paperwidth=8.5in
+]{geometry}
+
+\usepackage{graphicx}
+
+\begin{document}
+% Header
+{\parindent0pt
+ECE562 Lab 4\\
+Memory Data Storage \& I/O Device Interfacing\\
+Part 2\\
+\today\\
+Christopher Chin, Computer Science\\
+
+\textbf{Objectives:}
+
+The goal of this lab is to learn about ASCII and I/O interfacing.\\
+
+\textbf{Results:}
+
+CORRECT:\\
+\hspace*{1.5cm}FCC	'CORRECT!!!'\\
+\hspace*{1.5cm}FCB	0\\
+\\
+INCORRECT:\\
+\hspace*{1.5cm}FCC	'INCORRECT!'\\
+\hspace*{1.5cm}FCB	0\\
+\\
+CHKOK:\\
+\hspace*{1.5cm}MOVB    \#\%00000001,PTK\\
+\hspace*{1.5cm}PSHY\\
+\hspace*{1.5cm}JSR      MSEC\_DELAY\\
+\hspace*{1.5cm}PULY\\
+\hspace*{1.5cm}MOVB    \#\%00000000,PTK\\
+\\
+\hspace*{1.5cm}LDAA	\#\$00\\
+\hspace*{1.5cm}LDAB	\#\$02\\
+\hspace*{1.5cm}JSR	LCD\_POS\\
+\\
+\hspace*{1.5cm}LDX	\#CORRECT\\
+\hspace*{1.5cm}JSR	LCD\_STR\\
+\\
+\hspace*{1.5cm}BRA 	DONE\\
+\\
+CHKERR:\\
+\hspace*{1.5cm}MOVB    \#\%00000010,PTK\\
+\hspace*{1.5cm}PSHY\\
+\hspace*{1.5cm}JSR      MSEC\_DELAY\\
+\hspace*{1.5cm}PULY\\
+\hspace*{1.5cm}MOVB    \#\%00000000,PTK\\
+\\
+\hspace*{1.5cm}LDAA	\#\$00\\
+\hspace*{1.5cm}LDAB	\#\$02\\
+\hspace*{1.5cm}JSR	LCD\_POS\\
+\\
+\hspace*{1.5cm}LDX	\#INCORRECT\\
+\hspace*{1.5cm}JSR	LCD\_STR\\
+\\
+\hspace*{1.5cm}BRA 	DONE\\
+
+\includegraphics{flow.png}
+}
+\end{document}

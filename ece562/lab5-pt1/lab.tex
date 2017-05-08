@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[
+    left=0.73in,
+    right=0.73in,
+    top=.8in,
+    bottom=.50in,
+    paperheight=11in,
+    paperwidth=8.5in
+]{geometry}
+
+\begin{document}
+% Header
+{\parindent0pt
+ECE562 Lab 5\\
+Interrupt Handling\\
+Part 1\\
+\today\\
+Christopher Chin, Computer Science\\
+
+\textbf{Objectives:}
+
+The goal of this lab is to become more familiar with interrupts.\\
+
+\textbf{Results:}
+
+The green LED flashes 1 time per second because you set the real time clock interrupt to occur 1000 times per second.
+The real time clock interrupt calls an interrupt handler that toggles the LED if a counter reaches RTIMAX which is 500.
+The counter is incremented for each call so 500 calls must occur to toggle the LED.
+This causes the LED to toggle every half second, which results in a flash every 1 second.
+
+The green LED is unaffected by the key entering and display process because interrupts cause the program control flow to move to an interrupt handler.
+The interrupts are handled every millisecond and must be serviced.
+\\~\\
+The red LED flashes continuously because the IRQ pin interrupts are being called constantly.
+It is being called constantly because it is level triggered.
+The interrupt causes the IRQSERV routine to be called continuously.
+During IRQSERV the I-flag is set so another interrupt cannot interrupt it.
+The RTI command unsets the I-flag.
+
+The green LED stops flashing because the IRQ pin interrupts have a higher priority than the RTI interrupts.
+Whenever the controller tries to service an RTI interrupt it receives an IRQ pin interrupt and instead runs the IRQSERV routine
+
+Key presses are ignored because the interrupt is being constantly called so there is no time to run the main program.
+The IRQSERV routine contains a delay which simply wastes CPU time.
+The RTI handler on the other hand returns to regular program flow quickly and gets called one millisecond later.
+\\~\\
+Because IRQ interrupts are edge triggered it only occurs when the IRQ pins change levels.
+Since the IRQ pins aren't changing, regular operation follows.
+
+As I insert the wire, the red LED flashes twice due to electrical noise.
+
+As the wire is removed, the red LED flashes due to vibrations causing the contact to break and reattach.
+}
+\end{document}
